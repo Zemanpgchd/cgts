@@ -1,13 +1,11 @@
-#hlavni{
+.hlavni{
     display: grid;
-    width: 100vw;
-    height: 100vh;
-    align-items: center;
-    justify-items: center;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
-            'header, header, header'
-            'main main main'
-            'main footer main';
+        "header header header"
+        "maine maine maine"
+        "main footer footer";
 
 }
 .zahlavi{
@@ -15,7 +13,7 @@
     background-color: aqua;
 }
 .telo{
-    grid-area: main;
+    grid-area: maine;
     background-color: green;
 }
 .noha{
