@@ -4,19 +4,38 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
         "header header header"
-        "maine maine maine"
-        "main footer footer";
+        "nav main main"
+        "footer footer footer";
 
 }
 .zahlavi{
     grid-area: header;
     background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: center;
+
 }
 .telo{
-    grid-area: maine;
+    grid-area: main;
     background-color: green;
 }
+.navigace{
+    grid-area: nav;
+    background-color: yellow;
+}
+
 .noha{
     grid-area: footer;
     background-color: red;
+}
+
+
+
+#darkmodeimg{
+    max-height: 50px;
+    max-width: 50px;
 }
