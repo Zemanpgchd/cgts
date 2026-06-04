@@ -9,7 +9,7 @@
     </head>
     <body>
         <button id="darkmodebtn"><img src="darkmode.png" id="darkmodeimg"></button>
-        <form id="form" action="main.html" method="post">            
+        <form id="form" action="login.php" method="post">            
             <h1>Login</h1>
             <p>Please login</p>
             <hr>
@@ -22,6 +22,12 @@
 
                 <button type="submit" class="signupbtn">Login</button>
         </form> 
+        <?php
+            if(isset($_GET["pwd"])) // uživatel zadal špatné heslo, jinak parametr pwd v URL není nastaven
+            {
+                echo "<p style='color:red; text-align:center;'>Zadáno špatné heslo nebo e-mail.</p>";
+            }
+        ?>
         <div>Dont have an account? Sign up <a href='signup_page.php'>here</a></div>
 
     </body>

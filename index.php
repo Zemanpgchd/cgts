@@ -1,3 +1,9 @@
+<?php
+session_start();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +22,13 @@
             </form>
         </div>
         <div class="telo">
+            <h1>
+             <?php
+            if(isset($_GET["login"])) // uživatel zadal špatné heslo, jinak parametr pwd v URL není nastaven
+            {
+                echo "Welcome " . $_SESSION["first-name"];
+            }
+        ?>
             
         </div>
         <div class ="navigace">

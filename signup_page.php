@@ -9,7 +9,7 @@
     </head>
     <body>
         <button id="darkmodebtn"><img src="darkmode.png" id="darkmodeimg"></button>
-        <form id="form" action="main.html" method="post">            
+        <form id="form" action="signup.php" method="post">            
             <h1>Signup</h1>
             <p>Please sign up</p>
             <hr>
@@ -29,16 +29,18 @@
             <input type="password" id="pwd-repeat" placeholder="Repeat Password" name="pwd-repeat" required>
 
 
-            <label>
-            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Newsletter
-            </label>
-
             <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
             <div class="button-container">
                 <button type="button" class="cancelbtn">Cancel</button>
                 <button type="submit" class="signupbtn">Sign Up</button>
             </div>
+        <?php
+            if(isset($_GET["already_exist"])) // uživatel zadal špatné heslo, jinak parametr pwd v URL není nastaven
+            {
+                echo "<p style='color:red; text-align:center;'>Již máte účet!</p>";
+            }
+        ?>
         </form> 
         <div>Already have an account? Log in <a href='login_page.php'>here</a></div>
 
