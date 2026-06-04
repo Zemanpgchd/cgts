@@ -26,8 +26,8 @@
             <input type="password" id="pwd" placeholder="Enter Password" name="pwd" required>
 
             <label for="pwd-repeat"><b>Repeat Password</b></label>
-            <input type="password" id="pwd-repeat" placeholder="Repeat Password" name="pwd-repeat" required>
-
+            <input type="password" id="pwd-repeat" placeholder="Repeat Password" name="pwd-repeat" oninput="passwordsMatch()"required>
+            <p id="pwd-alert">Passwords don't match!</p>
 
             <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
@@ -43,6 +43,6 @@
         ?>
         </form> 
         <div>Already have an account? Log in <a href='login_page.php'>here</a></div>
-
+        <script src="pwdcontrol.js"></script>
     </body>
 </html>

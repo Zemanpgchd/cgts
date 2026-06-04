@@ -32,7 +32,15 @@ session_start();
             
         </div>
         <div class ="navigace">
-            
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Domů</a></li>
+                    <li><a href="#">Politika</a></li>
+                    <li><a href="#">Technologie</a></li>
+                    <li><a href="#">Sport</a></li>
+                    <li><a href="#">Kultura</a></li>
+                </ul>
+            <nav>
         </div>
         <div class ="noha">
             

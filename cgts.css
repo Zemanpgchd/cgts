@@ -39,3 +39,15 @@
     max-height: 50px;
     max-width: 50px;
 }
+
+
+#pwd-alert {
+  color:#f44336;
+  font-size: small;
+  margin-top:0px;
+  display: none;
+
+}
+#pwd-alert.show {
+  display:block;
+}
