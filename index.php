@@ -27,6 +27,7 @@ session_start();
             if(isset($_GET["login"])) // uživatel zadal špatné heslo, jinak parametr pwd v URL není nastaven
             {
                 echo "Welcome " . $_SESSION["first-name"];
+                $_SESSION["login"] = 1;
             }
         ?>
             
@@ -35,15 +36,18 @@ session_start();
             <nav>
                 <ul>
                     <li><a href="#" class="active">Domů</a></li>
-                    <li><a href="#">Politika</a></li>
-                    <li><a href="#">Technologie</a></li>
-                    <li><a href="#">Sport</a></li>
-                    <li><a href="#">Kultura</a></li>
+                    <li><a href="conferences_page.php">Konference</a></li>
+                <?php if (!empty($_SESSION["admin"]) && $_SESSION["admin"] == 1): ?>
+                    <li><a href="conferences_add_page.php">Zadat konferenci</a></li>
+                <?php endif; ?>
                 </ul>
             <nav>
         </div>
         <div class ="noha">
-            
+            <?php echo "<pre>";
+            print_r($_SESSION);
+            echo "</pre>"; 
+?>
         </div>
 
     </div>

@@ -31,7 +31,9 @@ else // dotaz vrátil nějaký řádek -> shoduje se e-mail a zadané heslo
         $_SESSION["id"]=$row["UserID"]; 
         $_SESSION["first-name"]=$row["FirstName"];
         $_SESSION["last-name"]=$row["LastName"];
+        $_SESSION["admin"]=$row["Admin"];
         $_SESSION["sort"] = "none";
+        $_SESSION["conferences"] = !empty($row["Conferences"]) ? explode(',', $row["Conferences"]) : [];
     }
     
     // Přejdeme na hlavní stránku e-shopu
