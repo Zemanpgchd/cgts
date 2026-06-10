@@ -1,53 +1,257 @@
-.hlavni{
+/* --- Reset a globální nastavení --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* --- Hlavní mřížka (Grid) --- */
+.hlavni {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    /* První sloupec pro menu zafixujeme, zbytek se přizpůsobí */
+    grid-template-columns: 260px 1fr 1fr; 
     grid-template-areas: 
         "header header header"
         "nav main main"
         "footer footer footer";
-
+    min-height: 100vh;
 }
-.zahlavi{
+
+/* --- Záhlaví (Header) --- */
+.zahlavi {
     grid-area: header;
-    background-color: aqua;
+    background-color: #1a252f; /* Profesionální tmavá břidlicová */
+    color: #ffffff;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 15px 30px;
     align-items: center;
-
-}
-.telo{
-    grid-area: main;
-    background-color: green;
-}
-.navigace{
-    grid-area: nav;
-    background-color: yellow;
+    border-bottom: 3px solid #8c6239; /* Hnědý akcent ladící s logem */
 }
 
-.noha{
-    grid-area: footer;
-    background-color: red;
+.zahlavi h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
 }
 
-
-
-#darkmodeimg{
+.zahlavi img {
     max-height: 50px;
-    max-width: 50px;
+    object-fit: contain;
 }
 
+/* --- Navigace (Sidebar) --- */
+.navigace {
+    grid-area: nav;
+    background-color: #2c3e50;
+    padding: 30px 15px;
+}
+
+.navigace ul {
+    list-style: none;
+}
+
+.navigace li {
+    margin-bottom: 10px;
+}
+
+.navigace a {
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.navigace a:hover, 
+.navigace a.active {
+    background-color: #34495e;
+    color: #ffffff;
+    padding-left: 20px; /* Jemný efekt posunutí při hoveru */
+}
+
+/* --- Obsah (Main Content) --- */
+.telo {
+    grid-area: main;
+    background-color: #ffffff;
+    padding: 40px;
+}
+
+.telo h1 {
+    color: #1a252f;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+/* Styl pro jednotlivé konference (Karty) */
+.telo > div {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.telo > div:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.telo h2 {
+    color: #2c3e50;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+.telo p {
+    margin-bottom: 6px;
+    color: #555555;
+}
+
+/* --- Formuláře --- */
+form#form {
+    max-width: 500px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+form#form h1 {
+    border-none: none;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+form#form p {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e2e8f0;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="date"], 
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* --- Tlačítka --- */
+button, 
+.signupbtn, 
+.button {
+    background-color: #8c6239; /* Elegantní zemitá hnědá */
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+button:hover, 
+.signupbtn:hover, 
+.button:hover {
+    background-color: #734d2a;
+}
+
+.zahlavi .button {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+}
+
+.zahlavi .button:hover {
+    background-color: #ffffff;
+    color: #1a2a3a;
+}
+
+/* --- Patička (Footer) --- */
+.noha {
+    grid-area: footer;
+    background-color: #1a252f;
+    color: #95a5a6;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px solid #2c3e50;
+}
+
+/* --- Původní Darkmode a Alert prvky --- */
+#darkmodebtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ffffff;
+    border: 1px solid #cbd5e0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#darkmodeimg {
+    max-height: 24px;
+    max-width: 24px;
+}
 
 #pwd-alert {
-  color:#f44336;
-  font-size: small;
-  margin-top:0px;
-  display: none;
-
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    display: none;
 }
+
 #pwd-alert.show {
-  display:block;
+    display: block;
 }

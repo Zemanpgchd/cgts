@@ -51,11 +51,6 @@ include "db.php"; // spojení s databází
 
 
                     while ($conference = $result->fetch_assoc()) {       
-                        // s využitím while cyklu a funkce fetch_assoc() může procházet řádek po řádku výsledek SQL dotazu 
-                        // a přistupovat k hodinotám v jednotlivých sloupcích
-
-                        // následující podmínkou hledáme produkty, které už nejsou skladem 
-                        // a přidáme jim stylovací třídu "sold-out", aby se zobrazily šedé
                 ?>
                                 <!-- Zde probíhá vytváření jednotlivých položek uvnitř divu s class="item" -->
                                 <div>
@@ -66,7 +61,6 @@ include "db.php"; // spojení s databází
                                     <p>Končí: <?php echo $conference["End_date"] ?></p>         
                                     <p>Kapacita: <?php echo $conference["Capacity"] ?></p>
                                         <?php
-                        // Zkontrolujeme, zda uživatel již NENÍ na konferenci přihlášen
                         
                         
                         if (!empty($_SESSION["id"])) {
